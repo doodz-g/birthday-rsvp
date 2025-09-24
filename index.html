@@ -19,6 +19,9 @@
         .hero-bg {
             background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
         }
+        .whiteText {
+            color: antiquewhite;
+        }
         .countdown-item {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -50,7 +53,7 @@
         <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
             <div
                 class="absolute inset-0 bg-fixed bg-cover bg-center opacity-70"
-                style="background-image: url('http://static.photos/people/1920x1080/90');"
+                style="background-image: url('image/90.png')"
                 data-aos="fade"
                 data-aos-duration="1500"
             ></div>
@@ -58,24 +61,23 @@
                 <div id="vanta-bg" class="w-full h-full"></div>
             </div>
             <div class="container mx-auto px-6 py-20 z-10 text-center" data-aos="fade-up">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 font-playfair">Lola Lydia</h1>
-                <div class="text-xl md:text-3xl mb-8">Celebrating 90 Wonderful Years</div>
-                <div class="text-5xl md:text-8xl font-bold text-blue-400 mb-8">90</div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 font-playfair whiteText">Lola Lydia</h1>
+                <div class="text-xl md:text-3xl mb-8 whiteText">Celebrating 90 Wonderful Years</div>
                 <div class="flex justify-center space-x-4 mb-12">
                     <div class="countdown-item rounded-lg p-4 w-24">
-                        <div class="text-3xl font-bold" id="days">00</div>
+                        <div class="text-3xl font-bold whiteText" id="days">00</div>
                         <div class="text-sm">Days</div>
                     </div>
                     <div class="countdown-item rounded-lg p-4 w-24">
-                        <div class="text-3xl font-bold" id="hours">00</div>
+                        <div class="text-3xl font-bold whiteText" id="hours">00</div>
                         <div class="text-sm">Hours</div>
                     </div>
                     <div class="countdown-item rounded-lg p-4 w-24">
-                        <div class="text-3xl font-bold" id="minutes">00</div>
+                        <div class="text-3xl font-bold whiteText" id="minutes">00</div>
                         <div class="text-sm">Minutes</div>
                     </div>
                     <div class="countdown-item rounded-lg p-4 w-24">
-                        <div class="text-3xl font-bold" id="seconds">00</div>
+                        <div class="text-3xl font-bold whiteText" id="seconds">00</div>
                         <div class="text-sm">Seconds</div>
                     </div>
                 </div>
@@ -337,8 +339,8 @@
                         required
                         class="w-full border border-gray-300 rounded px-3 py-2"
                     >
-                    <button type="submit" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
-                        Upload Memory
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-green-700">
+                        Upload
                     </button>
                 </form>
                 <!-- Close Button -->
