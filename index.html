@@ -6,6 +6,7 @@
         <title>Lola Lydia's 90th Birthday</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
         <script src="https://unpkg.com/feather-icons"></script>
@@ -352,6 +353,12 @@
         <!-- Three.js must be loaded first -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+        <!-- Remember to include jQuery :) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+        <!-- ToasterJS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
         <script>
         // Countdown timer
         function updateCountdown() {
@@ -477,7 +484,7 @@
 
                                 const text = await response.text();
                                 if (text === "Accepted") {
-                                    alert("Upload successful");
+                                    toastr.success('Upload successful!');
                                     modal.classList.add('hidden');
                                     // Reload memories after successful upload
                                     setTimeout(() => { loadMemories(); }, 5000);
