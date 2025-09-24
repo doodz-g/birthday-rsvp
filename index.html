@@ -1,19 +1,386 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>My static Space</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<div class="card">
-			<h1>Welcome to your static Space!</h1>
-			<p>You can modify this app directly by editing <i>index.html</i> in the Files and versions tab.</p>
-			<p>
-				Also don't forget to check the
-				<a href="https://huggingface.co/docs/hub/spaces" target="_blank">Spaces documentation</a>.
-			</p>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lola Lydia's 90th Birthday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a192f;
+            color: #ffffff;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+        }
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 4px solid #ffffff;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-fixed bg-cover bg-center opacity-70" style="background-image: url('http://static.photos/people/1920x1080/90');" data-aos="fade" data-aos-duration="1500"></div>
+        <div class="absolute inset-0 opacity-20">
+            <div id="vanta-bg" class="w-full h-full"></div>
+        </div>
+        <div class="container mx-auto px-6 py-20 z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 font-playfair">Lola Lydia</h1>
+            <div class="text-xl md:text-3xl mb-8">Celebrating 90 Wonderful Years</div>
+            <div class="text-5xl md:text-8xl font-bold text-blue-400 mb-8">90</div>
+            <div class="flex justify-center space-x-4 mb-12">
+                <div class="countdown-item rounded-lg p-4 w-24">
+                    <div class="text-3xl font-bold" id="days">00</div>
+                    <div class="text-sm">Days</div>
+                </div>
+                <div class="countdown-item rounded-lg p-4 w-24">
+                    <div class="text-3xl font-bold" id="hours">00</div>
+                    <div class="text-sm">Hours</div>
+                </div>
+                <div class="countdown-item rounded-lg p-4 w-24">
+                    <div class="text-3xl font-bold" id="minutes">00</div>
+                    <div class="text-sm">Minutes</div>
+                </div>
+                <div class="countdown-item rounded-lg p-4 w-24">
+                    <div class="text-3xl font-bold" id="seconds">00</div>
+                    <div class="text-sm">Seconds</div>
+                </div>
+            </div>
+            <a href="#details" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition duration-300">
+                View Celebration Details
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white text-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-playfair">About Lola Lydia</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="http://static.photos/people/640x360/1" alt="Lola Lydia" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4 font-playfair">A Life Well Lived</h3>
+                    <p class="mb-4">Lola Lydia has been a pillar of strength, love, and wisdom for our family for 90 incredible years. Her kindness, resilience, and joyful spirit have touched countless lives.</p>
+                    <p class="mb-6">Born in 1933, she has witnessed and adapted to tremendous changes in the world while maintaining her core values of faith, family, and compassion.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i data-feather="heart" class="text-blue-600 mr-2"></i>
+                            <span>90 Years Young</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="users" class="text-blue-600 mr-2"></i>
+                            <span>5 Generations</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="home" class="text-blue-600 mr-2"></i>
+                            <span>Family Matriarch</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="award" class="text-blue-600 mr-2"></i>
+                            <span>Countless Memories</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Celebration Details -->
+    <section id="details" class="py-20 bg-gray-100 text-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-playfair">Celebration Details</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8" data-aos="fade-up">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 bg-blue-600 text-white p-8 flex flex-col items-center justify-center">
+                            <i data-feather="calendar" class="w-12 h-12 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Date & Time</h3>
+                            <p class="text-center">Saturday, June 10, 2023<br>4:00 PM onwards</p>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <h3 class="text-2xl font-bold mb-4 font-playfair">The Grand Celebration</h3>
+                            <p class="mb-4">Join us as we honor Lola Lydia's 90 years of love, wisdom, and joy. The celebration will include:</p>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-blue-600 mr-2 mt-1"></i>
+                                    <span>Special tribute program featuring family members</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-blue-600 mr-2 mt-1"></i>
+                                    <span>Video presentation of Lola Lydia's life journey</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-blue-600 mr-2 mt-1"></i>
+                                    <span>Live music and entertainment</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-feather="check-circle" class="text-blue-600 mr-2 mt-1"></i>
+                                    <span>Gourmet dinner buffet</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 bg-blue-600 text-white p-8 flex flex-col items-center justify-center">
+                            <i data-feather="map-pin" class="w-12 h-12 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Venue</h3>
+                            <p class="text-center">The Grand Ballroom<br>Oceanview Resort<br>123 Seaside Avenue</p>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <div class="aspect-w-16 aspect-h-9 mb-4">
+                                <iframe class="w-full h-64 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjgiTiAxMjLCsDI1JzA5LjkiVw!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#" class="flex items-center text-blue-600">
+                                    <i data-feather="navigation" class="mr-2"></i>
+                                    <span>Get Directions</span>
+                                </a>
+                                <a href="#" class="flex items-center text-blue-600">
+                                    <i data-feather="phone" class="mr-2"></i>
+                                    <span>Contact Organizers</span>
+                                </a>
+                                <a href="#" class="flex items-center text-blue-600">
+                                    <i data-feather="mail" class="mr-2"></i>
+                                    <span>RSVP</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="py-20 bg-white text-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-playfair">Memory Lane</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <p class="max-w-2xl mx-auto mt-4">A visual journey through Lola Lydia's 90 years of love, laughter, and cherished moments</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-aos="fade-up">
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/vintage/640x360/1" alt="Young Lola Lydia" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/vintage/640x360/2" alt="Family photo" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/vintage/640x360/3" alt="Wedding day" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/vintage/640x360/4" alt="With grandchildren" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/vintage/640x360/5" alt="Celebration" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/vintage/640x360/6" alt="Travel" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="http://static.photos/vintage/640x360/7" alt="Recent photo" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="w-full h-full bg-blue-600 text-white flex items-center justify-center">
+                        <div class="text-center p-4">
+                            <i data-feather="plus" class="w-12 h-12 mx-auto mb-4"></i>
+                            <h3 class="text-xl font-bold">Share Your Photos</h3>
+                            <p>Upload your favorite memories with Lola Lydia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-20 bg-gray-100 text-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-playfair">90 Years of Milestones</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto relative pl-12 timeline">
+                <div class="mb-12 relative timeline-item" data-aos="fade-right">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 font-bold mb-2">1933</div>
+                        <h3 class="text-xl font-bold mb-2">Birth of a Legend</h3>
+                        <p>Lola Lydia was born on June 10, 1933, in a small town, the youngest of five siblings.</p>
+                    </div>
+                </div>
+                <div class="mb-12 relative timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 font-bold mb-2">1955</div>
+                        <h3 class="text-xl font-bold mb-2">Marriage & Family</h3>
+                        <p>Married the love of her life and began building their family legacy.</p>
+                    </div>
+                </div>
+                <div class="mb-12 relative timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 font-bold mb-2">1960s</div>
+                        <h3 class="text-xl font-bold mb-2">Community Leader</h3>
+                        <p>Became an active community leader, organizing events and helping neighbors in need.</p>
+                    </div>
+                </div>
+                <div class="mb-12 relative timeline-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 font-bold mb-2">1980</div>
+                        <h3 class="text-xl font-bold mb-2">First Grandchild</h3>
+                        <p>Welcomed her first grandchild, beginning her journey as "Lola" to many.</p>
+                    </div>
+                </div>
+                <div class="mb-12 relative timeline-item" data-aos="fade-right" data-aos-delay="400">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 font-bold mb-2">2010</div>
+                        <h3 class="text-xl font-bold mb-2">Great-Grandchildren</h3>
+                        <p>The family expanded to include great-grandchildren, bringing new joy.</p>
+                    </div>
+                </div>
+                <div class="relative timeline-item" data-aos="fade-right" data-aos-delay="500">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 font-bold mb-2">2023</div>
+                        <h3 class="text-xl font-bold mb-2">90 Years Young</h3>
+                        <p>Celebrating 90 years of wisdom, love, and cherished memories with family and friends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 font-playfair">Join the Celebration</h2>
+                <p class="text-xl mb-8">We would be honored by your presence at this milestone event</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition duration-300">
+                        RSVP Now
+                    </a>
+                    <a href="#" class="border-2 border-white hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition duration-300">
+                        Send a Message
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-white mb-2 font-playfair">Lola Lydia</div>
+                    <div>90th Birthday Celebration</div>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i data-feather="facebook"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i data-feather="instagram"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i data-feather="mail"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300">
+                        <i data-feather="phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>© 2023 Lola Lydia's 90th Birthday Celebration. All rights reserved.</p>
+                <p class="mt-2">Created with love by her family</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            const targetDate = new Date("June 10, 2023 16:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Vanta.js background
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3b82f6,
+            backgroundColor: 0x0a192f,
+            size: 0.8
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', function() {
+            const parallax = document.querySelector('.bg-fixed');
+            let scrollPosition = window.pageYOffset;
+            parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        });
+        
+        // Initialize animations and icons
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+    </script>
+</body>
 </html>
