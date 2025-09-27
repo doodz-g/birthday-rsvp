@@ -103,7 +103,7 @@
                 </div>
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2" data-aos="fade-right">
-                        <img src="http://static.photos/people/640x360/1" alt="Lola Lydia" class="rounded-lg shadow-xl w-full">
+                        <img src="https://res.cloudinary.com/dydwsn6uu/image/upload/v1759006489/DSC07847_jxkpzg.jpg" alt="Lola Lydia" class="rounded-lg shadow-xl w-full">
                     </div>
                     <div class="md:w-1/2" data-aos="fade-left">
                         <h3 class="text-2xl font-bold mb-4 font-playfair">A Life Well Lived</h3>
@@ -549,6 +549,7 @@
                     const formData = new FormData();
                     formData.append("file", $fileInput[0].files[0]);
                     formData.append("mime_type", $fileInput[0].files[0].type);
+                    console.log(formData);
 
                     $.ajax({
                         url: "https://hook.us2.make.com/xy2ih71odyk1gk4a98ceemd2xedjkjda",
